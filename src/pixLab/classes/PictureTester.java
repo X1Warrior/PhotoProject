@@ -20,10 +20,11 @@ public class PictureTester
   
   public static void testChicken()
   {
-	  Picture sample = new Picture("beach.jpg");
+	  Picture sample = new Picture("chicken nugget.png");
+//	  sample.explore();
+//	  sample.chickenFilter(sample.getHeight()/2, sample.getWidth()/2);
 	  sample.explore();
-	  sample.chickenFilter(sample.getHeight()/2, sample.getWidth()/2);
-	  sample.explore();
+	  sample.glitchPhoto(5);
   }
   
   /** Method to test mirrorVertical */
@@ -67,7 +68,7 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+//    testZeroBlue();
     testChicken();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
@@ -75,7 +76,7 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorVertical();
+//    testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
