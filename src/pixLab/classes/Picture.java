@@ -265,13 +265,13 @@ public class Picture extends SimplePicture
 		Picture sourcePic = new Picture(this.getFileName());
 		Pixel[][] newPixels = sourcePic.getPixels2D();
 		Pixel[][] oldPixels = this.getPixels2D();
-		for (int row = pixelShift; row < oldPixels.length + pixelShift; row++)
+		for (int col = pixelShift; col < oldPixels.length + pixelShift; col++)
 		{
-			for (int col = 0; col < oldPixels[0].length; col++)
+			for (int row = 0; row < oldPixels[0].length; row++)
 			{
-				oldPixels [row%oldPixels.length][col].setRed(newPixels[row-pixelShift][col].getRed());
-				oldPixels [row%oldPixels.length][col].setGreen(newPixels[row-pixelShift][col].getGreen());
-				oldPixels [row%oldPixels.length][col].setBlue(newPixels[row-pixelShift][col].getBlue());
+				oldPixels [row][col%oldPixels.length].setRed(newPixels[row][col-pixelShift].getRed());
+				oldPixels [row][col%oldPixels.length].setGreen(newPixels[row][col-pixelShift].getGreen());
+				oldPixels [row][col%oldPixels.length].setBlue(newPixels[row][col-pixelShift].getBlue());
 			}
 		}
 			

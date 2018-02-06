@@ -24,7 +24,8 @@ public class PictureTester
 //	  sample.explore();
 //	  sample.chickenFilter(sample.getHeight()/2, sample.getWidth()/2);
 	  sample.explore();
-	  sample.glitchPhoto(5);
+	  sample.glitchPhoto(75);
+	  sample.explore();
   }
   
   /** Method to test mirrorVertical */
