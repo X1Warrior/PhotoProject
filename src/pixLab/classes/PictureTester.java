@@ -13,9 +13,10 @@ public class PictureTester
   public static void testZeroBlue()
   {
     Picture beach = new Picture("beach.jpg");
+    beach.glitchPhoto(55);
     beach.explore();
-    beach.zeroBlue();
-    beach.explore();
+	beach.glitchColor(20,25,30);
+	beach.explore();
   }
   
   public static void testChicken()
@@ -25,6 +26,8 @@ public class PictureTester
 //	  sample.chickenFilter(sample.getHeight()/2, sample.getWidth()/2);
 	  sample.explore();
 	  sample.glitchPhoto(75);
+	  sample.explore();
+	  sample.glitchColor(20,25,30);
 	  sample.explore();
   }
   
@@ -78,7 +81,7 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
 //    testMirrorVertical();
-    //testMirrorTemple();
+    testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();

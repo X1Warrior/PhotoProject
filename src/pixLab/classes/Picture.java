@@ -137,10 +137,10 @@ public class Picture extends SimplePicture
 		Pixel[][] pixels = this.getPixels2D();
 
 		// loop through the rows
-		for (int row = 27; row < 97; row++)
+		for (int row = 27; row < 57; row++)
 		{
 			// loop from 13 to just before the mirror point
-			for (int col = 13; col < mirrorPoint; col++)
+			for (int col = 0; col < 455; col++)
 			{
 
 				leftPixel = pixels[row][col];
@@ -148,6 +148,7 @@ public class Picture extends SimplePicture
 				rightPixel.setColor(leftPixel.getColor());
 			}
 		}
+		
 	}
 
 	/**
@@ -274,11 +275,45 @@ public class Picture extends SimplePicture
 				oldPixels [row][col%oldPixels.length].setBlue(newPixels[row][col-pixelShift].getBlue());
 			}
 		}
-			
-		
-		
-//		this.mirrorVertical();
-	    
+    
+	}
+	
+//	public void glitchColor()
+//	{
+//		Pixel[][] pixels = this.getPixels2D();
+//		int shiftAmount = (int) (.33 * pixels[0].length);
+//		int width = pixels[0].length;
+//		
+//		for (int row = 0; row < pixels.length; row++)
+//		{
+//			Color [] currentColors = new Color[pixels[0].length];
+//			
+//			for (int col = 0; col < pixels[row].length; col++)
+//			{
+//				currentColors[col] = pixels[row][col].getColor();
+//			}
+//			
+//			for (int col = 0; col < pixels[0].length; col++)
+//			{
+//				pixels[row][col].setColor(currentColors[(col + shiftAmount) % width]);
+//			}
+//		}
+//	}
+	
+	public void glitchColor(int redShift, int greenShift, int blueShift)
+	{
+		Picture sourcePic = new Picture(this.getFileName());
+		Pixel[][] newPixels = sourcePic.getPixels2D();
+		Pixel[][] oldPixels = this.getPixels2D();
+		for (int col = 0; col < oldPixels.length; col++)
+		{
+			for (int row = 0; row < oldPixels[0].length; row++)
+			{
+				oldPixels [row][col%oldPixels.length].setRed(newPixels[row][(col+redShift)%oldPixels.length].getRed());
+				oldPixels [row][col%oldPixels.length].setGreen(newPixels[row][(col+greenShift)%oldPixels.length].getGreen());
+				oldPixels [row][col%oldPixels.length].setBlue(newPixels[row][(col+blueShift)%oldPixels.length].getBlue());
+			}
+		}
 	}
 	
 
