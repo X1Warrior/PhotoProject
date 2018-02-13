@@ -316,5 +316,20 @@ public class Picture extends SimplePicture
 		}
 	}
 	
+	public void copyRegion(int red, int blue)
+	{
+		Picture sourcePic = new Picture(this.getFileName());
+		Pixel[][] newRegion = sourcePic.getPixels2D();
+		Pixel[][] oldRegion = this.getPixels2D();
+		for (int col = 32; col < oldRegion.length; col++)
+		{
+			for (int row = 32; row < oldRegion.length; row++)
+			{
+				oldRegion [row][col%oldRegion.length].setRed(newRegion[row][(col+red)%oldRegion.length].getRed());
+				oldRegion [row][col%oldRegion.length].setBlue(newRegion[row][(col+blue)%oldRegion.length].getBlue());
+			}
+		}
+	}
+	
 
 } // this } is the end of class Picture, put all new methods before this

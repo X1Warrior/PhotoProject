@@ -47,6 +47,11 @@ public class PictureTester
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
+//	temple.glitchPhoto(75);
+//	temple.explore();
+//    temple.glitchColor(20,25,30);
+//	temple.explore();
+    temple.copyRegion(20, 30);
   }
   
   /** Method to test the collage method */
