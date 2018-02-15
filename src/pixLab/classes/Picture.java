@@ -330,6 +330,71 @@ public class Picture extends SimplePicture
 			}
 		}
 	}
-	
+	public void addMessage(String message, int xPos, int yPos, int color)
+	 {
+	   // get a graphics context to use to draw on the buffered image
+	   Graphics2D graphics2d = bufferedImage.createGraphics();
+	   
+	   // set the font to Helvetica bold style and size 16
+	   graphics2d.setFont(new Font("Helvetica",Font.BOLD,16));
+	   
+	   // draw the message
+	   graphics2d.drawString(message,xPos,yPos);
+	   
+	   if (color > 100)
+	   {
+		   if(color < 99)
+		   {
+			   graphics2d.setColor(Color.GREEN);
+		   }
+		   graphics2d.setColor(Color.blue);
+	   }
+	}
+
+	public int getAlpha() {
+
+
+	    int alpha = (value >> 24) & 0xff;
+	    
+	    return alpha;
+	  }
+
+	  public static int getRed(int value)
+	  {
+	    int red = (value >> 16) & 0xff;
+	    return red;
+	  }
+
+
+	  public int getGreen(int value)
+	  {
+	    int green = (value >> 8) & 0xff;
+	    return green;
+	  }
+
+	  public int getBlue(int value)
+	  {
+	    int blue = value & 0xff;
+	    return blue;
+	  }
+	  
+	  
+	public void bobFilter()
+	{
+	Picture sourcePic = new Picture(this.getFileName());
+	Pixel[][] newRegion = sourcePic.getPixels2D();
+	Pixel[][] oldRegion = this.getPixels2D();
+	for (int col = 0; col < oldRegion.length; col++)
+	{
+		for (int row = 0; row < oldRegion.length; row++)
+		{
+			 if (getAlpha() == 0 && getRed() == 255 && getGreen() == 0 && getBlue() == 0)
+			 {
+				 
+			 }
+			 }
+		}
+	}
+
 
 } // this } is the end of class Picture, put all new methods before this

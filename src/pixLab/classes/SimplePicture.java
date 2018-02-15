@@ -33,7 +33,7 @@ public class SimplePicture implements DigitalPicture
   /**
    * buffered image to hold pixels for the simple picture
    */
-  private BufferedImage bufferedImage;
+  protected BufferedImage bufferedImage;
   
   /**
    * frame used to display the simple picture
@@ -528,7 +528,7 @@ public class SimplePicture implements DigitalPicture
    // draw the message
    graphics2d.drawString(message,xPos,yPos);
    
- }
+}
  
  /**
   * Method to draw a string at the given location on the picture

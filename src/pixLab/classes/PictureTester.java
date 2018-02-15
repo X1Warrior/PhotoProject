@@ -51,7 +51,8 @@ public class PictureTester
 //	temple.explore();
 //    temple.glitchColor(20,25,30);
 //	temple.explore();
-    temple.copyRegion(20, 30);
+    temple.addMessage("whats up homie", 20, 25, 105);
+    temple.explore();
   }
   
   /** Method to test the collage method */
@@ -78,7 +79,7 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
 //    testZeroBlue();
-    testChicken();
+//    testChicken();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
